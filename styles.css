@@ -9,6 +9,9 @@ html {
 
 body {
   margin: 0;
+}
+
+body {
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -25,54 +28,72 @@ body {
 
 .sub-heading {
   margin-bottom: -0.1rem;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 2.45rem;
-  font-weight: 200;
-  color: hsl(234, 12%, 34%);
 }
 @media screen and (min-width: 1200px) {
   .sub-heading {
     margin-bottom: -0.5rem;
+  }
+}
+
+.sub-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.45rem;
+  font-weight: 200;
+  color: hsl(234, 12%, 34%);
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .sub-heading {
     font-size: 3.66rem;
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .heading {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .heading {
-  text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 2.45rem;
   font-weight: 600;
   color: hsl(234, 12%, 34%);
+  text-align: center;
 }
 @media screen and (min-width: 1200px) {
   .heading {
-    margin-bottom: 1.5rem;
     font-size: 3.65rem;
   }
 }
 
 .copy {
   margin-bottom: 7.5rem;
-  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .copy {
+    margin: 0 auto 6.4rem;
+    max-width: 55rem;
+  }
+}
+
+.copy {
   font-family: "Poppins", sans-serif;
   font-size: 1.51rem;
   font-weight: 400;
   color: hsl(229, 6%, 66%);
+  text-align: center;
   line-height: 1.63;
 }
-@media screen and (min-width: 1200px) {
-  .copy {
-    max-width: 55rem;
-    margin: 0 auto 6.4rem;
-  }
-}
 
-.outer-card-container {
+.inner-card-container, .outer-card-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.outer-card-container {
   gap: 2.4rem;
 }
 @media screen and (min-width: 1200px) {
@@ -84,10 +105,6 @@ body {
 }
 
 .inner-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   gap: 2.4rem;
 }
 @media screen and (min-width: 1200px) {
@@ -101,13 +118,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 2.2rem 3rem 2.7rem 2.9rem;
   width: 31.2rem;
   height: 22.2rem;
-  padding: 2.2rem 3rem 2.7rem 2.9rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  border-top: 0.4rem solid;
-  box-shadow: 0 0.75rem 1.75rem hsl(229, 6%, 66%);
 }
 @media screen and (min-width: 1200px) {
   .card {
@@ -115,6 +128,13 @@ body {
     height: 25rem;
     padding: 2.7rem 3.1rem 3.3rem;
   }
+}
+
+.card {
+  border-radius: 0.5rem;
+  border-top: 0.4rem solid;
+  box-shadow: 0 0.75rem 1.75rem hsl(229, 6%, 66%);
+  background-color: white;
 }
 @media screen and (min-width: 1200px) {
   .card--start-end {
@@ -133,41 +153,43 @@ body {
 .card--4 {
   border-color: hsl(212, 86%, 64%);
 }
-.card__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+.card__title-structure, .card__title {
+  margin-bottom: 0.55rem;
+}
+@media screen and (min-width: 1200px) {
+  .card__title-structure, .card__title {
+    margin-bottom: 0.8rem;
+  }
 }
 .card__title {
-  margin-bottom: 0.55rem;
-  text-align: left;
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: hsl(234, 12%, 34%);
+  text-align: left;
 }
 @media screen and (min-width: 1200px) {
-  .card__title {
-    margin-bottom: 0.8rem;
+  .card__copy-structure, .card__copy {
+    margin-bottom: 0.7rem;
   }
 }
 .card__copy {
-  text-align: left;
   font-family: "Poppins", sans-serif;
   font-size: 1.32rem;
   font-weight: 400;
   color: hsl(229, 6%, 66%);
+  text-align: left;
 }
 @media screen and (min-width: 1200px) {
   .card__copy {
-    margin-bottom: 0.7rem;
     line-height: 1.8;
   }
 }
-.card__img {
+.card__img-structure, .card__img {
   display: block;
   align-self: flex-end;
+}
+.card__img {
   width: 5.7rem;
   height: auto;
 }

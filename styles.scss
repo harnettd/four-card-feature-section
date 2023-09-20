@@ -40,9 +40,10 @@ $semi-bold: 600;
   color: $color;
 }
 
+%body-structure { margin: 0; }
 
 body {
-  margin: 0;
+  @extend %body-structure;
   background-color: $very-light-gray;
 }
 
@@ -61,44 +62,57 @@ $card-height-desktop: 25rem;
   }
 }
 
-.sub-heading {
+%sub-heading-structure {
   margin-bottom: -.1rem;
-  text-align: center;
-  @include font(2.45rem, $extra-light, $very-dark-blue);
 
-  @media screen and (min-width: $breakpoint) {
-    margin-bottom: -.5rem;
-    font-size: 3.66rem;
-  }
+  @media screen and (min-width: $breakpoint) { margin-bottom: -.5rem; }
+}
+
+.sub-heading {
+  @extend %sub-heading-structure;
+  @include font(2.45rem, $extra-light, $very-dark-blue);
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint) { font-size: 3.66rem; }
+}
+
+%heading-structure {
+  @media screen and (min-width: $breakpoint) { margin-bottom: 1.5rem; }
 }
 
 .heading {
-  text-align: center;
+  @extend %heading-structure;
   @include font(2.45rem, $semi-bold, $very-dark-blue);
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint) { font-size: 3.65rem; }
+}
+
+%copy-structure {
+  margin-bottom: 7.5rem;
 
   @media screen and (min-width: $breakpoint) {
-    margin-bottom: 1.5rem;
-    font-size: 3.65rem;
+    margin: 0 auto 6.4rem;
+    max-width: 55rem;
   }
 }
 
 .copy {
-  margin-bottom: 7.5rem;
-  text-align: center;
+  @extend %copy-structure;
   @include font(1.51rem, $regular, $grayish-blue);
+  text-align: center;
   line-height: 1.63;
-
-  @media screen and (min-width: $breakpoint) {
-    max-width: 55rem;
-    margin: 0 auto 6.4rem;
-  }
 }
 
-.outer-card-container {
+%flex-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center;  
+}
+
+.outer-card-container {
+  @extend %flex-col;
   gap: 2.4rem;
 
   @media screen and (min-width: $breakpoint) {
@@ -109,96 +123,84 @@ $card-height-desktop: 25rem;
 }
 
 .inner-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  @extend %flex-col;
   gap: 2.4rem;
 
-  @media screen and (min-width: $breakpoint) {
-    gap: 2.8rem;
-  }
+  @media screen and (min-width: $breakpoint) { gap: 2.8rem; }
 }
 
-.card {
+%card-structure {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 
+  padding: 2.2rem 3rem 2.7rem 2.9rem;
   width: $card-width-mobile;
   height: $card-height-mobile;
-  padding: 2.2rem 3rem 2.7rem 2.9rem;
-
-  background-color: white;
-  border-radius: .5rem;
-  border-top: .4rem solid;
-  box-shadow: 0 .75rem 1.75rem $grayish-blue;
 
   @media screen and (min-width: $breakpoint) {
     width: $card-width_desktop;
     height: $card-height-desktop;
     padding: 2.7rem 3.1rem 3.3rem;
   }
+}
+
+.card {
+  @extend %card-structure;
+
+  border-radius: .5rem;
+  border-top: .4rem solid;
+  box-shadow: 0 .75rem 1.75rem $grayish-blue;
+  background-color: white;
 
   &--start-end {
-    @media screen and (min-width: $breakpoint) {
-      align-self: center;  
-    }
+    @media screen and (min-width: $breakpoint) { align-self: center; }
   }
 
-  &--1 {
-    border-color: $cyan;
-  }
+  &--1 { border-color: $cyan; }
 
-  &--2 {
-    border-color: $red;
-  }
+  &--2 { border-color: $red; }
 
-  &--3 {
-    border-color: $orange;
-  }
+  &--3 { border-color: $orange; }
 
-  &--4 {
-    border-color: $blue;
-  }
+  &--4 { border-color: $blue; }
 
-  &__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+  &__title-structure {
+    margin-bottom: .55rem;
+
+    @media screen and (min-width: $breakpoint) { margin-bottom: 0.8rem; }
   }
 
   &__title {
-    margin-bottom: .55rem;
-    text-align: left;
+    @extend .card__title-structure;
     @include font(2rem, $semi-bold, $very-dark-blue);
+    text-align: left;
+  }
 
-    @media screen and (min-width: $breakpoint) {
-      margin-bottom: 0.8rem;
-    }
+  &__copy-structure {
+    @media screen and (min-width: $breakpoint) { margin-bottom: .7rem; }
   }
 
   &__copy {
-    text-align: left;
+    @extend .card__copy-structure;
     @include font(1.32rem, $regular, $grayish-blue);
+    text-align: left;
 
-    @media screen and (min-width: $breakpoint) {
-      margin-bottom: .7rem;
-      line-height: 1.8;
-    }
+    @media screen and (min-width: $breakpoint) { line-height: 1.8; }
+  }
+
+  &__img-structure {
+    display: block;
+    align-self: flex-end;
   }
 
   &__img {
-    display: block;
-    align-self: flex-end;
+    @extend .card__img-structure;
     width: 5.7rem;
     height: auto;
 
-    @media screen and (min-width: $breakpoint) {
-      width: 6.4rem;
-    }
+    @media screen and (min-width: $breakpoint) { width: 6.4rem; }
   }
 }
 
