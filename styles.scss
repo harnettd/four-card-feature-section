@@ -133,6 +133,7 @@ $card-height-desktop: 25rem;
   background-color: white;
   border-radius: .5rem;
   border-top: .4rem solid;
+  box-shadow: 0 .75rem 1.75rem $grayish-blue;
 
   @media screen and (min-width: $breakpoint) {
     width: $card-width_desktop;
@@ -214,22 +215,22 @@ $card-height-desktop: 25rem;
 
 // Development redefinition level
 
-body {
-  background: {
-    image: url("./design/mobile-design.jpg");
-    repeat: no-repeat;
-    position: left top;
-    size: 37.5rem auto;
-  }
+// body {
+//   background: {
+//     image: url("./design/mobile-design.jpg");
+//     repeat: no-repeat;
+//     position: left top;
+//     size: 37.5rem auto;
+//   }
 
-  @media screen and (min-width: $breakpoint) {
-    background: {
-      image: url("./design/desktop-design.jpg");
-      size: 144rem auto;
-    };
-  }
-}
+//   @media screen and (min-width: $breakpoint) {
+//     background: {
+//       image: url("./design/desktop-design.jpg");
+//       size: 144rem auto;
+//     };
+//   }
+// }
 
-.wrapper {
-  opacity: .5;
-}
+// .wrapper {
+//   opacity: .5;
+// }

@@ -107,6 +107,7 @@ body {
   background-color: white;
   border-radius: 0.5rem;
   border-top: 0.4rem solid;
+  box-shadow: 0 0.75rem 1.75rem hsl(229, 6%, 66%);
 }
 @media screen and (min-width: 1200px) {
   .card {
@@ -183,23 +184,6 @@ body {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-body {
-  background-image: url("./design/mobile-design.jpg");
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 37.5rem auto;
-}
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url("./design/desktop-design.jpg");
-    background-size: 144rem auto;
-  }
-}
-
-.wrapper {
-  opacity: 0.5;
 }
 
 /*# sourceMappingURL=styles.css.map */
