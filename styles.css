@@ -9,6 +9,116 @@ html {
 
 body {
   margin: 0;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.wrapper {
+  margin: 5rem;
+}
+@media screen and (min-width: 968px) {
+  .wrapper {
+    margin: 10rem;
+  }
+}
+
+.sub-heading {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+  color: hsl(229, 6%, 66%);
+}
+
+.heading {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+
+.copy {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: hsl(229, 6%, 66%);
+}
+
+.outer-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.4rem;
+}
+@media screen and (min-width: 968px) {
+  .outer-card-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 22.2rem;
+  width: 31.2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  border-top: 2px solid;
+}
+@media screen and (min-width: 968px) {
+  .card--start-end {
+    align-self: center;
+  }
+}
+.card--1 {
+  border-color: hsl(180, 62%, 55%);
+}
+.card--2 {
+  border-color: hsl(0, 78%, 62%);
+}
+.card--3 {
+  border-color: hsl(34, 97%, 64%);
+}
+.card--4 {
+  border-color: hsl(212, 86%, 64%);
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card__title {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+.card__copy {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: hsl(229, 6%, 66%);
+}
+.card__img {
+  display: block;
+  align-self: flex-end;
+}
+
+.inner-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
 }
 
 .attribution {

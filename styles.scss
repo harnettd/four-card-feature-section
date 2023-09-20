@@ -5,10 +5,146 @@ html { font-size: 62.5%; }
     margin-top: 0;
 }
 
-body {
-  margin: 0;
+
+// Breakpoints
+$breakpoint: 968px;
+
+
+// Colors
+
+// Primary
+$red: hsl(0 78% 62%);
+$cyan: hsl(180 62% 55%);
+$orange: hsl(34 97% 64%);
+$blue: hsl(212 86% 64%);
+
+// Neutral
+$very-dark-blue: hsl(234 12% 34%);
+$grayish-blue: hsl(229 6% 66%);
+$very-light-gray: hsl(0 0% 98%);
+
+
+// Fonts
+$font-stack: 'Poppins', sans-serif;
+$extra-light: 200;
+$regular: 400;
+$semi-bold: 600;
+
+@mixin font ($size, $weight, $color) {
+  font: {
+    family: $font-stack;
+    size: $size;
+    weight: $weight;
+  }
+  color: $color;
 }
 
+
+body {
+  margin: 0;
+  background-color: $very-light-gray;
+}
+
+.wrapper {
+  margin: 5rem;
+
+  @media screen and (min-width: $breakpoint) {
+    margin: 10rem;  
+  }
+}
+
+.sub-heading {
+  text-align: center;
+  @include font(3rem, $extra-light, $grayish-blue)
+}
+
+.heading {
+  text-align: center;
+  @include font(3rem, $semi-bold, $very-dark-blue)
+}
+
+.copy {
+  text-align: center;
+  @include font(2rem, $regular, $grayish-blue)
+}
+
+.outer-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.4rem;
+
+  @media screen and (min-width: $breakpoint) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 22.2rem;
+  width: 31.2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  border-top: 2px solid;
+
+  &--start-end {
+    @media screen and (min-width: $breakpoint) {
+      align-self: center;  
+    }
+  }
+
+  &--1 {
+    border-color: $cyan;
+  }
+
+  &--2 {
+    border-color: $red;
+  }
+
+  &--3 {
+    border-color: $orange;
+  }
+
+  &--4 {
+    border-color: $blue;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__title {
+    text-align: left;
+    @include font(2rem, $semi-bold, $very-dark-blue);
+  }
+
+  &__copy {
+    text-align: left;
+    @include font(1.5rem, $regular, $grayish-blue)
+  }
+
+  &__img {
+    display: block;
+    align-self: flex-end;
+  }
+}
+
+.inner-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
 
 // Footer
 
