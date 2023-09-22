@@ -23,7 +23,7 @@ Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 
-### Screenshot
+### Screenshots
 
 ![screenshot-mobile-1](./images/screenshot-mobile-1.png)
 ![screenshot-mobile-2](./images/screenshot-mobile-2.png)
@@ -39,7 +39,7 @@ Users should be able to:
 ### Built with
 
 - HTML5
-- CSS including CSS Grid using the OOCSS methodology
+- CSS including Flexbox using the OOCSS methodology
 - Sass
 
 ### What I learned
