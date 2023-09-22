@@ -49,8 +49,10 @@ OOCSS, and placeholder classes in Sass.
 
 ### Continued development
 
-While I have used Flexbox on most of the Frontend Mentor projects that I have completed so far, I have yet to use CSS Grid. 
+- While I have used Flexbox on most of the Frontend Mentor projects that I have completed so far, I have yet to use CSS Grid. 
 Looking at some of the remaining Newbie projects, it looks like I'll need to learn CSS Grid sooner rather than ater.
+
+- I still have troube reproducing a box-shadow from a design. Mine always come out too dark.
 
 ## Author
 
